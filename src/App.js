@@ -3,6 +3,7 @@ import { Route, HashRouter as Router, Switch, Redirect } from 'react-router-dom'
 import { PrismicProvider, useAllPrismicDocumentsByType } from '@prismicio/react'
 import PrismicApi from './prismic'
 import Home from './components/Home'
+import NotFound from './components/NotFound'
 
 const prismicApi = new PrismicApi()
 
@@ -19,6 +20,10 @@ export const App = () => {
             exact
             path={'/'}
             component={Home}
+          />
+          <Route
+            path={'/404.html'}
+            component={NotFound}
           />
           <Route>
             <Redirect to={'/404.html'} />
