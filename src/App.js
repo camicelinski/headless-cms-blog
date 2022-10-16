@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, HashRouter as Router, Switch, Redirect } from 'react-router-dom'
 import { PrismicProvider, useAllPrismicDocumentsByType } from '@prismicio/react'
 import PrismicApi from './prismic'
 import Home from './components/Home'
@@ -12,16 +12,20 @@ export const App = () => {
 
   return (
     <PrismicProvider client={prismicApi.loadData()}>
-      <BrowserRouter>
+      <Router>
         <div>Header</div>
-        <Home />
-        <Route
-          exact
-          path={'/'}
-          element={<Home />}
-        />
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            component={Home}
+          />
+          <Route>
+            <Redirect to={'/404.html'} />
+          </Route>
+        </Switch>
         <div>Footer</div>
-      </BrowserRouter>
+      </Router>
     </PrismicProvider>
   )
 }
