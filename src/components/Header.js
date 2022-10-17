@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSinglePrismicDocument, PrismicText } from '@prismicio/react'
+import Nav from './Nav'
 
 const Header = () => {
   const [document] = useSinglePrismicDocument('header')
@@ -18,7 +19,7 @@ const Header = () => {
           </h1>
         </>
       )}
-      <p>Nav</p>
+      <Nav />
     </>
   )
 }
