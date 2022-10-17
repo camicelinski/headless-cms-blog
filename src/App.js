@@ -3,6 +3,8 @@ import { Route, HashRouter as Router, Switch, Redirect } from 'react-router-dom'
 import { PrismicProvider, useAllPrismicDocumentsByType } from '@prismicio/react'
 import PrismicApi from './prismic'
 import Home from './components/Home'
+import Header from './components/Header'
+import Post from './components/Post'
 import NotFound from './components/NotFound'
 
 const prismicApi = new PrismicApi()
@@ -14,12 +16,16 @@ export const App = () => {
   return (
     <PrismicProvider client={prismicApi.loadData()}>
       <Router>
-        <div>Header</div>
+        <Header />
         <Switch>
           <Route
             exact
             path={'/'}
             component={Home}
+          />
+          <Route
+            path={'/post/:slug'}
+            component={Post}
           />
           <Route
             path={'/404.html'}

@@ -9,22 +9,14 @@ const PostItem = ({ post }) => {
   const { data } = post
 
   return (
-    <div>
+    <article>
       <h2>
         <PrismicText field={data.title} />
       </h2>
       <span>{data.date}</span>
       <PrismicRichText field={data.content} />
-    </div>
+    </article>
   )
 }
 
 export default PostItem
-
-/*
-<>
-  <h2>{post.data.title}</h2>
-  <span>{post.data.date}</span>
-  <PrismicRichText field={post.data.content} />
-</>
-*/
