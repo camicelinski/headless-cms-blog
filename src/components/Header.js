@@ -1,16 +1,19 @@
 import React from 'react'
 import { useSinglePrismicDocument, PrismicText } from '@prismicio/react'
 import Nav from './Nav'
+import StyledHeader from '../style/Header.styled'
+import StyledImage from '../style/Image.styled'
 
 const Header = () => {
   const [document] = useSinglePrismicDocument('header')
   console.log(document)
 
   return (
-    <>
+    <StyledHeader>
       {document && (
         <>
-          <img
+          <StyledImage
+            className={'avatar'}
             src={document.data.avatar.url}
             alt={'blog-avatar'}
           />
@@ -20,7 +23,7 @@ const Header = () => {
         </>
       )}
       <Nav />
-    </>
+    </StyledHeader>
   )
 }
 

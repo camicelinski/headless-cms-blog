@@ -3,19 +3,20 @@ import {
   useAllPrismicDocumentsByType,
   PrismicText
 } from '@prismicio/react'
+import StyledNav from '../style/Nav.styled'
 
 const Nav = () => {
   const [categories] = useAllPrismicDocumentsByType('category')
   console.log(categories)
 
   return (
-    <nav>
+    <StyledNav>
       <ul>
         <li>Home</li>
         {categories && (
           categories.map((category) =>
             <>
-              <li>
+              <li key={category.data.category_title}>
                 <PrismicText field={category.data.category_title} />
               </li>
             </>
@@ -23,7 +24,7 @@ const Nav = () => {
         )}
         <li>About us</li>
       </ul>
-    </nav>
+    </StyledNav>
   )
 }
 
