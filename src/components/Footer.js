@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSinglePrismicDocument, PrismicRichText } from '@prismicio/react'
+import StyledFooter from '../style/Footer.styled'
 
 const Footer = () => {
   const [document] = useSinglePrismicDocument('footer')
   console.log(document)
 
   return (
-    <footer>
+    <StyledFooter>
       {document && (
         <>
           <ul>
@@ -21,7 +22,7 @@ const Footer = () => {
           <PrismicRichText field={document.data.copyright} />
         </>
       )}
-    </footer>
+    </StyledFooter>
   )
 }
 

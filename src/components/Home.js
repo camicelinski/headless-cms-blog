@@ -2,23 +2,32 @@ import React from 'react'
 import {
   useAllPrismicDocumentsByType
 } from '@prismicio/react'
-import PostItem from './PostItem'
+import PostItemSmall from './PostItemSmall'
+import Pagination from './Pagination'
 
 const Home = () => {
   const [posts] = useAllPrismicDocumentsByType('blog_post')
   console.log(posts)
 
   return (
-    <div>
+    <section>
       {posts && (
-        posts.map((post, index) =>
-          <PostItem
-            post={post}
-            key={index}
-          />
-        )
+        <Pagination
+          path={'/'}
+          limit={5}
+          length={posts.length}
+        >
+          {posts && (
+            posts.map((post, index) =>
+              <PostItemSmall
+                post={post}
+                key={index}
+              />
+            )
+          )}
+        </Pagination>
       )}
-    </div>
+    </section>
   )
 }
 

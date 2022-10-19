@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
-  background-color: #ecf0f1;
+  background-color: #f2f2f2;
 
   ul {
     list-style: none;

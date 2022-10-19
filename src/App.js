@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Post from './components/Post'
 import Footer from './components/Footer'
+import CategoryPosts from './components/CategoryPosts'
 import NotFound from './components/NotFound'
 
 const prismicApi = new PrismicApi()
@@ -21,13 +22,22 @@ export const App = () => {
         <GlobalStyle/>
         <Header />
         <Switch>
+          <Route path={'/'}>
+            <Redirect to={'/1'} />
+          </Route>
           <Route
             exact
-            path={'/'}
-            component={Home}
-          />
+            path={'/:page'}
+          >
+            <Home />
+          </Route>
           <Route
-            path={'/post/:slug'}
+            path={'/:category'}
+          >
+            <CategoryPosts />
+          </Route>
+          <Route
+            path={'/post/:slugs'}
             component={Post}
           />
           <Route

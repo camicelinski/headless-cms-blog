@@ -4,8 +4,8 @@ import { usePrismicDocumentByUID } from '@prismicio/react'
 import PostItem from './PostItem'
 
 const Post = () => {
-  const { slug } = useParams()
-  const [post] = usePrismicDocumentByUID('blog_post', slug)
+  const { slugs } = useParams()
+  const [post] = usePrismicDocumentByUID('blog_post', slugs)
 
   return (
     <>

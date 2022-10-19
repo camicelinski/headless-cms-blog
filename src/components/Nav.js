@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   useAllPrismicDocumentsByType,
   PrismicText
@@ -12,17 +13,21 @@ const Nav = () => {
   return (
     <StyledNav>
       <ul>
-        <li>Home</li>
+        <li key={'home'}>
+          <Link to={'/'}>Home</Link>
+        </li>
         {categories && (
           categories.map((category) =>
-            <>
-              <li key={category.data.category_title}>
+            <li key={category.id}>
+              <Link to={`/${category.data.category_id}`}>
                 <PrismicText field={category.data.category_title} />
-              </li>
-            </>
+              </Link>
+            </li>
           )
         )}
-        <li>About us</li>
+        <li key={'aboutUs'}>
+          <Link to={'/about-us'}>About us</Link>
+        </li>
       </ul>
     </StyledNav>
   )
