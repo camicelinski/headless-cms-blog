@@ -19,7 +19,7 @@ const PostItemSmall = ({ post }) => {
       />
       <span>{data.date}</span>
       <PrismicRichText field={data.content} />
-      <Link to={'/post/'.concat(post.uid)}>
+      <Link to={'/post/'.concat(post.uic)}>
         <span>Leia mais...</span>
       </Link>
     </article>

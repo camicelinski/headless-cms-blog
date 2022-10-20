@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { usePrismicDocumentByUID } from '@prismicio/react'
-import PostItem from './PostItem'
+import PostItem from '../components/PostItem'
 
 const Post = () => {
   const { slugs } = useParams()

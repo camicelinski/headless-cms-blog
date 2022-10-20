@@ -10,6 +10,7 @@ const PaginationRoute = props => {
   const begin = limit * (page - 1)
   const end = page * limit
 
+  // const length = children.length
   const pages = Math.ceil(length / limit)
 
   const links = (new Array(pages).fill(0)).map(

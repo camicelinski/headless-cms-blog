@@ -1,32 +1,47 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {
   useAllPrismicDocumentsByType,
   PrismicText
 } from '@prismicio/react'
 import StyledNav from '../style/Nav.styled'
+import StyledLink from '../style/Link.styled'
 
 const Nav = () => {
   const [categories] = useAllPrismicDocumentsByType('category')
   console.log(categories)
 
+  const activeClass = 'active'
+
   return (
     <StyledNav>
       <ul>
-        <li key={'home'}>
-          <Link to={'/'}>Home</Link>
+        <li>
+          <StyledLink
+            activeClassName={activeClass}
+            to={'/1'}
+          >
+            Home
+          </StyledLink>
         </li>
         {categories && (
           categories.map((category) =>
             <li key={category.id}>
-              <Link to={`/${category.data.category_id}`}>
+              <StyledLink
+                activeClassName={activeClass}
+                to={`/${category.uid}`}
+              >
                 <PrismicText field={category.data.category_title} />
-              </Link>
+              </StyledLink>
             </li>
           )
         )}
-        <li key={'aboutUs'}>
-          <Link to={'/about-us'}>About us</Link>
+        <li>
+          <StyledLink
+            activeClassName={activeClass}
+            to={'/about-us'}
+          >
+            About us
+          </StyledLink>
         </li>
       </ul>
     </StyledNav>
