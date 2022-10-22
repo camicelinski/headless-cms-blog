@@ -28,7 +28,7 @@ const Nav = () => {
             <li key={category.uid}>
               <StyledLink
                 activeClassName={activeClass}
-                to={`/category/${category.uid}`}
+                to={`/category/${category.uid}/1`}
               >
                 <PrismicText field={category.data.category_title} />
               </StyledLink>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, useParams } from 'react-router-dom'
-import { useAllPrismicDocumentsByType, PrismicText } from '@prismicio/react'
+import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import PostItemSmall from '../components/PostItem/PostItemSmall'
+import Pagination from '../components/Pagination/Pagination'
 // import Pagination from '../components/Pagination'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
@@ -13,29 +14,29 @@ const CategoryPosts = () => {
   console.log(uid, documents)
   const [categories] = useAllPrismicDocumentsByType('category')
   console.log(categories)
+  const pageUrl = `/category/${uid}`
 
   return (
     <main>
-      <Route path={`/category/${uid}`}>
-        {categories && (categories.map((cat) =>
-          cat.uid === uid ?
-              (
-                <h3 key={`${cat.uid}-${cat.id}`}>
-                  <PrismicText field={cat.data.category_title} />
-                </h3>
-              )
-            : null
-        ))}
+      <Route path={`${pageUrl}/:page`}>
         {documents && (
-          documents.filter((post) =>
-            post.data.categories.map((cat) => {
-              return cat.category.uid
-            }).includes(uid)).map((post, index) =>
-              <PostItemSmall
-                post={post}
-                key={index}
-              />
-          )
+          <Pagination
+            path={pageUrl}
+            limit={5}
+            // length={Children.length}
+          >
+            {documents && (
+              documents.filter((post) =>
+                post.data.categories.map((cat) => {
+                  return cat.category.uid
+                }).includes(uid)).map((post, index) =>
+                  <PostItemSmall
+                    post={post}
+                    key={index}
+                  />
+              )
+            )}
+          </Pagination>
         )}
       </Route>
     </main>
@@ -45,6 +46,16 @@ const CategoryPosts = () => {
 export default CategoryPosts
 
 /*
+  {categories && (categories.map((cat) =>
+          cat.uid === uid ?
+              (
+                <h3 key={`${cat.uid}-${cat.id}`}>
+                  <PrismicText field={cat.data.category_title} />
+                </h3>
+              )
+            : null
+        ))}
+
   const Routes = () => {
     if (categories) {
       categories.map(item => {

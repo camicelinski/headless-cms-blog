@@ -19,7 +19,7 @@ const Routes = ({ location }) => {
       <Route path={'/home/:page'} >
         <Home />
       </Route>
-      <Route path={'/category/:uid'} >
+      <Route path={'/category/:uid/:page'} >
         <CategoryPosts />
       </Route>
       <Route

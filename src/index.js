@@ -12,11 +12,11 @@ import PrismicApi from './prismic'
 const prismicApi = new PrismicApi()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PrismicProvider client={prismicApi.loadData()}>
-      <App />
-    </PrismicProvider>,
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <PrismicProvider client={prismicApi.loadData()}>
+    <App />
+  </PrismicProvider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 )
 
