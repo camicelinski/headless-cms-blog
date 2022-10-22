@@ -25,7 +25,7 @@ const Nav = () => {
         </li>
         {categories && (
           categories.map((category) =>
-            <li key={category.id}>
+            <li key={category.uid}>
               <StyledLink
                 activeClassName={activeClass}
                 to={`/${category.uid}`}

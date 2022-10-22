@@ -1,22 +1,32 @@
 import React from 'react'
 import {
-  usePrismicDocumentsByType
+  PrismicRichText,
+  PrismicText,
+  useSinglePrismicDocument
 } from '@prismicio/react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import StyledImage from '../style/Image.styled'
+// import Header from '../components/Header'
+// import Footer from '../components/Footer'
 
 const AboutUs = () => {
-  const [document] = usePrismicDocumentsByType('about_us')
+  const [document] = useSinglePrismicDocument('about_us')
   console.log(document)
 
   return (
-    <>
-      <Header />
-      <main>
-        About us
-      </main>
-      <Footer />
-    </>
+    <main>
+      {document && (
+        <>
+          <StyledImage
+            className={'post_img'}
+            src={document.data.image.url}
+          />
+          <h2>
+            <PrismicText field={document.data.title} />
+          </h2>
+          <PrismicRichText field={document.data.text} />
+        </>
+      )}
+    </main>
   )
 }
 

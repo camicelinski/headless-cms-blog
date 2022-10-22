@@ -1,16 +1,51 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from '../pages/Home'
 import NotFound from '../pages/NotFound'
 import CategoryPosts from '../pages/CategoryPosts'
 import Post from '../pages/Post'
 import AboutUs from '../pages/AboutUs'
 
-const Routes = ({ location }) => {
+const appRoutes = ({ location }) => {
   return (
-    <Switch location={location}>
+    <Routes location={location}>
       <Route
+        path={'/'}
+        element={<Navigate to={'/1'} />}
+      />
+      <Route
+        path={'/:page'}
+        element={<Home/>}
+      />
+      <Route
+        path={'/:category'}
+        element={<CategoryPosts/>}
+      />
+      <Route
+        path={'/post/:slugs'}
+        element={<Post/>}
+      />
+      <Route
+        path={'/about-us'}
+        element={<AboutUs/>}
+      />
+      <Route
+        path={'/404.html'}
+        element={<NotFound/>}
+      />
+      <Route
+        path={'/*'}
+        element={<Navigate to={'/404.html'} />}
+      />
+    </Routes>
+  )
+}
+
+export default appRoutes
+
+/*
+<Route
         exact
         path={'/'}
       >
@@ -19,7 +54,7 @@ const Routes = ({ location }) => {
       <Route path={'/:page'} >
         <Home />
       </Route>
-      <Route path={'/:category'} >
+      <Route path={'/:uid'} >
         <CategoryPosts />
       </Route>
       <Route
@@ -36,8 +71,4 @@ const Routes = ({ location }) => {
       <Route>
         <Redirect to={'/404.html'} />
       </Route>
-    </Switch>
-  )
-}
-
-export default Routes
+*/

@@ -5,8 +5,8 @@ import { PrismicRichText, PrismicText } from '@prismicio/react'
 import StyledImage from '../style/Image.styled'
 
 const PostItemSmall = ({ post }) => {
-  const { slugs, data } = post
-  console.log(slugs)
+  const { data } = post
+  console.log(data)
 
   return (
     <article>
