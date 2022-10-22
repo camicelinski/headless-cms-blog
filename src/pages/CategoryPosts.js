@@ -7,18 +7,18 @@ import PostItemSmall from '../components/PostItemSmall'
 // import Footer from '../components/Footer'
 
 const CategoryPosts = () => {
-  const { category } = useParams()
+  const { uid } = useParams()
   // const category = 'cronica'
   const [documents] = useAllPrismicDocumentsByType('blog_post')
-  console.log(category, documents)
+  console.log(uid, documents)
   const [categories] = useAllPrismicDocumentsByType('category')
   console.log(categories)
 
   return (
     <main>
-      <Route path={`/${category}`}>
+      <Route path={`/category/${uid}`}>
         {categories && (categories.map((cat) =>
-          cat.uid === category ?
+          cat.uid === uid ?
               (
                 <h3 key={`${cat.uid}-${cat.id}`}>
                   <PrismicText field={cat.data.category_title} />
@@ -30,7 +30,7 @@ const CategoryPosts = () => {
           documents.filter((post) =>
             post.data.categories.map((cat) => {
               return cat.category.uid
-            }).includes(category)).map((post, index) =>
+            }).includes(uid)).map((post, index) =>
               <PostItemSmall
                 post={post}
                 key={index}

@@ -24,25 +24,25 @@ export const App = () => {
         <GlobalStyle/>
         <Header />
         <Switch>
-          <Route path={'/about-us'}>
-            <AboutUs />
-          </Route>
           <Route
             exact
             path={'/'}
           >
-            <Redirect to={'/1'} />
+            <Redirect to={'/home/1'} />
           </Route>
-          <Route path={'/:page'} >
+          <Route path={'/home/:page'} >
             <Home />
           </Route>
-          <Route path={'/:uid'} >
+          <Route path={'/category/:uid'} >
             <CategoryPosts />
           </Route>
           <Route
-            path={'/post/:slugs'}
+            path={'/post/:uid'}
             component={Post}
           />
+          <Route path={'/about-us'}>
+            <AboutUs />
+          </Route>
           <Route
             path={'/404.html'}
             component={NotFound}

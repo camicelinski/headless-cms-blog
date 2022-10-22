@@ -9,7 +9,7 @@ const Pagination = props => {
 
   return (
     <Switch>
-      <Route path={`${path}/:page`}>
+      <Route path={`${path}/:page` &{}}>
         <PaginationRoute
           path={path}
           limit={limit}

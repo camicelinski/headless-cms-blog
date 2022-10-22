@@ -14,7 +14,7 @@ const Home = () => {
       <main>
         {documents && (
           <Pagination
-            path={''}
+            path={'/home'}
             limit={3}
             length={documents.length}
           >
