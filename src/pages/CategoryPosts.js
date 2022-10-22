@@ -3,6 +3,7 @@ import { Route, useParams } from 'react-router-dom'
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import PostItemSmall from '../components/PostItem/PostItemSmall'
 import Pagination from '../components/Pagination/Pagination'
+import { sortByDate } from '../helpers/sortByDate'
 // import Pagination from '../components/Pagination'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
@@ -29,7 +30,7 @@ const CategoryPosts = () => {
               documents.filter((post) =>
                 post.data.categories.map((cat) => {
                   return cat.category.uid
-                }).includes(uid)).map((post, index) =>
+                }).includes(uid)).sort(sortByDate).map((post, index) =>
                   <PostItemSmall
                     post={post}
                     key={index}

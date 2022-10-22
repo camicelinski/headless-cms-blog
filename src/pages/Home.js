@@ -4,6 +4,7 @@ import {
 } from '@prismicio/react'
 import PostItemSmall from '../components/PostItem/PostItemSmall'
 import Pagination from '../components/Pagination/Pagination'
+import { sortByDate } from '../helpers/sortByDate'
 
 const Home = () => {
   const [documents] = useAllPrismicDocumentsByType('blog_post')
@@ -19,7 +20,7 @@ const Home = () => {
             length={documents.length}
           >
             {documents && (
-              documents.map((post, index) =>
+              documents.sort(sortByDate).map((post, index) =>
                 <PostItemSmall
                   post={post}
                   key={index}
