@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PrismicRichText, PrismicText } from '@prismicio/react'
-import StyledImage from '../style/Image.styled'
+import { PrismicText } from '@prismicio/react'
+import StyledImage from '../../style/Image.styled'
+import Introduction from './Introduction'
 
 const PostItemSmall = ({ post }) => {
   const { data } = post
@@ -20,7 +21,10 @@ const PostItemSmall = ({ post }) => {
         src={data.post_image.url}
       />
       <span>{data.date}</span>
-      <PrismicRichText field={data.content} />
+      <Introduction
+        sliceZone={data.content}
+        textLimit={500}
+      />
       <Link to={'/post/'.concat(post.uid)}>
         <span>Leia mais...</span>
       </Link>

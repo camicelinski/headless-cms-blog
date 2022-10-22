@@ -2,8 +2,8 @@ import React from 'react'
 import {
   useAllPrismicDocumentsByType
 } from '@prismicio/react'
-import PostItemSmall from '../components/PostItemSmall'
-import Pagination from '../components/Pagination'
+import PostItemSmall from '../components/PostItem/PostItemSmall'
+import Pagination from '../components/Pagination/Pagination'
 
 const Home = () => {
   const [documents] = useAllPrismicDocumentsByType('blog_post')
@@ -15,7 +15,7 @@ const Home = () => {
         {documents && (
           <Pagination
             path={'/home'}
-            limit={3}
+            limit={5}
             length={documents.length}
           >
             {documents && (

@@ -4,7 +4,7 @@ import {
   PrismicText,
   PrismicRichText
 } from '@prismicio/react'
-import StyledImage from '../style/Image.styled'
+import StyledImage from '../../style/Image.styled'
 
 const PostItem = ({ post }) => {
   const { data } = post

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, useParams } from 'react-router-dom'
 import { useAllPrismicDocumentsByType, PrismicText } from '@prismicio/react'
-import PostItemSmall from '../components/PostItemSmall'
+import PostItemSmall from '../components/PostItem/PostItemSmall'
 // import Pagination from '../components/Pagination'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
