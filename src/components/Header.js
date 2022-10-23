@@ -7,11 +7,9 @@ import StyledImage from '../style/Image.styled'
 
 const Header = () => {
   const [document] = useSinglePrismicDocument('header')
-  console.log(document)
   const location = useLocation()
 
   const isPostPage = (location) => {
-    console.log(location)
     return location.pathname.includes('/post/')
   }
 

@@ -4,7 +4,6 @@ import StyledFooter from '../style/Footer.styled'
 
 const Footer = () => {
   const [document] = useSinglePrismicDocument('footer')
-  console.log(document)
 
   return (
     <StyledFooter>

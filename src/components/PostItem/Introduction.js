@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Introduction = ({ sliceZone, textLimit = 300, uid }) => {
   const firstTextSlice = sliceZone.find((slice) => slice.type === 'paragraph')
-  console.log(firstTextSlice)
 
   if (firstTextSlice) {
     const text = firstTextSlice.text
@@ -24,7 +23,7 @@ const Introduction = ({ sliceZone, textLimit = 300, uid }) => {
           to={'/post/'.concat(uid)}
           className={'post_link-read-more'}
         >
-          <span> Leia mais...</span>
+          <span>Leia mais...</span>
         </Link>
       </p>
     )

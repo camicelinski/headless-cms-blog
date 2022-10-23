@@ -9,7 +9,6 @@ import { formatDate } from '../../helpers/formatDate'
 
 const PostItemSmall = ({ post }) => {
   const { data } = post
-  console.log(post, data)
 
   return (
     <StyledPostItemSmall>

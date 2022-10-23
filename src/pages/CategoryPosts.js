@@ -8,9 +8,6 @@ import { sortByDate } from '../helpers/sortByDate'
 const CategoryPosts = () => {
   const { uid } = useParams()
   const [documents] = useAllPrismicDocumentsByType('blog_post')
-  console.log(uid, documents)
-  const [categories] = useAllPrismicDocumentsByType('category')
-  console.log(categories)
   const pageUrl = `/category/${uid}`
 
   return (

@@ -7,7 +7,6 @@ import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 
 const Nav = () => {
   const [categories] = useAllPrismicDocumentsByType('category')
-  console.log(categories)
 
   const activeClass = 'active'
 

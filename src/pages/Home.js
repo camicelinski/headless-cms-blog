@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import PostItemSmall from '../components/PostItem/PostItemSmall'
@@ -6,7 +7,6 @@ import { sortByDate } from '../helpers/sortByDate'
 
 const Home = () => {
   const [documents] = useAllPrismicDocumentsByType('blog_post')
-  console.log(documents)
 
   return (
     <>

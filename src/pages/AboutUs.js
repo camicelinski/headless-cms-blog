@@ -5,7 +5,6 @@ import StyledImage from '../style/Image.styled'
 
 const AboutUs = () => {
   const [document] = useSinglePrismicDocument('about_us')
-  console.log(document)
 
   return (
     <StyledAboutUs>
