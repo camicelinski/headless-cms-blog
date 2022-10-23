@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 const StyledLink = styled(NavLink)`
     color: #444;
     text-decoration: none;
-    margin-bottom: 50px;
 
     &:hover {
       color: #60a3bc;

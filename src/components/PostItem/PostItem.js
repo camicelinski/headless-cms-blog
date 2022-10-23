@@ -4,13 +4,15 @@ import {
   PrismicText,
   PrismicRichText
 } from '@prismicio/react'
+import StyledPostItem from '../../style/PostItem.styled'
 import StyledImage from '../../style/Image.styled'
+import { formatDate } from '../../helpers/formatDate'
 
 const PostItem = ({ post }) => {
   const { data } = post
 
   return (
-    <article>
+    <StyledPostItem>
       <h2>
         <PrismicText field={data.title} />
       </h2>
@@ -18,9 +20,9 @@ const PostItem = ({ post }) => {
         className={'post_img'}
         src={data.post_image.url}
       />
-      <span>{data.date}</span>
+      <p className={'post_date'}>{ formatDate(data.date) }</p>
       <PrismicRichText field={data.content} />
-    </article>
+    </StyledPostItem>
   )
 }
 
