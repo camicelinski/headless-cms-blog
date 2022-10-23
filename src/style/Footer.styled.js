@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
-  // margin: 30px auto;
   text-align: center;
 
   ul {
@@ -18,7 +17,6 @@ const StyledFooter = styled.footer`
   }
 
   p {
-    // padding-bottom: 15px;
     font-size: 0.8rem;
     text-align: center;
   }

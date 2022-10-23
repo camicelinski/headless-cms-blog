@@ -1,13 +1,7 @@
 import React from 'react'
-import {
-  PrismicRichText,
-  PrismicText,
-  useSinglePrismicDocument
-} from '@prismicio/react'
+import { PrismicRichText, PrismicText, useSinglePrismicDocument } from '@prismicio/react'
 import StyledAboutUs from '../style/AboutUs.styled'
 import StyledImage from '../style/Image.styled'
-// import Header from '../components/Header'
-// import Footer from '../components/Footer'
 
 const AboutUs = () => {
   const [document] = useSinglePrismicDocument('about_us')

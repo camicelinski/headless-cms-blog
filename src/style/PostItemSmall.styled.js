@@ -28,7 +28,6 @@ const StyledPostItemSmall = styled.article`
       font-family: 'Lora', 'Times New Roman', serif;
       font-style: italic;
       line-height: 1rem;
-      // text-transform: uppercase;
       font-size: 1rem;
       color: #777;
       text-align: center;
@@ -49,22 +48,3 @@ const StyledPostItemSmall = styled.article`
 `
 
 export default StyledPostItemSmall
-/*
-<Link to={'/post/'.concat(post.uid)}>
-        <h3>
-          <PrismicText field={data.title} />
-        </h3>
-      </Link>
-      <StyledImage
-        className={'post_img'}
-        src={data.post_image.url}
-      />
-      <span>{data.date}</span>
-      <Introduction
-        sliceZone={data.content}
-        textLimit={500}
-      />
-      <Link to={'/post/'.concat(post.uid)}>
-        <span>Leia mais...</span>
-      </Link>
-*/

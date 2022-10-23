@@ -22,7 +22,6 @@ const StyledPostItem = styled.article`
       font-family: 'Lora', 'Times New Roman', serif;
       font-style: italic;
       line-height: 1rem;
-      // text-transform: uppercase;
       font-size: 1rem;
       color: #777;
       text-align: center;

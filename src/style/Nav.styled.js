@@ -33,7 +33,7 @@ const StyledNav = styled.nav`
     }    
 
     li{
-      padding: 10px 0px;
+      padding: 10px 10px;
 
       @media screen and (max-width: 768px) {
         display: block;

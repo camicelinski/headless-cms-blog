@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 
 import App from './App'
 
-// import './index.css'
 import reportWebVitals from './reportWebVitals'
 
 import { PrismicProvider } from '@prismicio/react'
@@ -12,11 +11,9 @@ import PrismicApi from './prismic'
 const prismicApi = new PrismicApi()
 
 ReactDOM.render(
-  // <React.StrictMode>
   <PrismicProvider client={prismicApi.loadData()}>
     <App />
   </PrismicProvider>,
-  // </React.StrictMode>,
   document.getElementById('root')
 )
 

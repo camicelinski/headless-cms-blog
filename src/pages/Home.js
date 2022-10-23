@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  useAllPrismicDocumentsByType
-} from '@prismicio/react'
+import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import PostItemSmall from '../components/PostItem/PostItemSmall'
 import Pagination from '../components/Pagination/Pagination'
 import { sortByDate } from '../helpers/sortByDate'

@@ -41,32 +41,3 @@ const Routes = ({ location }) => {
 }
 
 export default Routes
-
-/*
-<Route
-        exact
-        path={'/'}
-      >
-        <Redirect to={'/1'} />
-      </Route>
-      <Route path={'/:page'} >
-        <Home />
-      </Route>
-      <Route path={'/:uid'} >
-        <CategoryPosts />
-      </Route>
-      <Route
-        path={'/post/:slugs'}
-        component={Post}
-      />
-      <Route path={'/about-us'}>
-        <AboutUs />
-      </Route>
-      <Route
-        path={'/404.html'}
-        component={NotFound}
-      />
-      <Route>
-        <Redirect to={'/404.html'} />
-      </Route>
-*/

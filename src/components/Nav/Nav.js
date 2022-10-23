@@ -1,8 +1,5 @@
 import React, { useState, useRef } from 'react'
-import {
-  useAllPrismicDocumentsByType,
-  PrismicText
-} from '@prismicio/react'
+import { useAllPrismicDocumentsByType, PrismicText } from '@prismicio/react'
 import StyledNav from '../../style/Nav.styled'
 import StyledLink from '../../style/Link.styled'
 import Burger from './Burger'

@@ -5,7 +5,6 @@ import PostItem from '../components/PostItem/PostItem'
 
 const Post = () => {
   const { uid } = useParams()
-  // console.log(uid)
   const [post] = usePrismicDocumentByUID('blog_post', uid)
   console.log(post)
 

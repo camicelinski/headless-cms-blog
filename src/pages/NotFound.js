@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import StyledNotFound from '../style/NotFound.styled'
 
 const NotFound = () => {
   return (
     <>
-      <p>Essa página não existe. Retorne à <Link to={'/'}>página principal.</Link></p>
+      <StyledNotFound>Essa página não existe. Retorne à <Link to={'/'}>página principal.</Link></StyledNotFound>
     </>
   )
 }
