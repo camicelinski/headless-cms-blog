@@ -10,6 +10,7 @@ const StyledPagLink = styled(NavLink)`
 
 const StyledPaginationRoute = styled.nav`
 & ul {
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
