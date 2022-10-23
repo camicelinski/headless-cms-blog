@@ -6,7 +6,7 @@ const StyledHeader = styled.header`
 
   h1 {
     font-family: 'Prata', 'Times New Roman', serif;
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
 `
 

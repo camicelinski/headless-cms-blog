@@ -4,6 +4,7 @@ import {
   PrismicText,
   useSinglePrismicDocument
 } from '@prismicio/react'
+import StyledAboutUs from '../style/AboutUs'
 import StyledImage from '../style/Image.styled'
 // import Header from '../components/Header'
 // import Footer from '../components/Footer'
@@ -13,11 +14,11 @@ const AboutUs = () => {
   console.log(document)
 
   return (
-    <main>
+    <StyledAboutUs>
       {document && (
         <>
           <StyledImage
-            className={'post_img'}
+            className={'about-us_img'}
             src={document.data.image.url}
           />
           <h2>
@@ -26,7 +27,7 @@ const AboutUs = () => {
           <PrismicRichText field={document.data.text} />
         </>
       )}
-    </main>
+    </StyledAboutUs>
   )
 }
 

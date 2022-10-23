@@ -1,17 +1,38 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+
+const StyledPagLink = styled(NavLink)`
+  &.${props => props.activeClassName} {
+    color: #60a3bc;
+    font-weight: bold;
+  }
+`
 
 const StyledPaginationRoute = styled.nav`
 & ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: 30px;
   list-style: none;   
 }
 
-& li {
-  margin-right: 25px;
+& div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+}
+
+& li {  
   margin-bottom: 10px;
-  font-size: 1.3rem;
+  padding: 5px;
+  font-size: 1rem;
 
   & a {
     text-decoration: none;
@@ -19,11 +40,11 @@ const StyledPaginationRoute = styled.nav`
     padding-bottom: 4px;
 
     &:hover {
-      color: #B4DD7F;
+      color: #82ccdd;
       transition: 0.1s;
-    }
+    }    
   }  
 }
 `
 
-export default StyledPaginationRoute
+export { StyledPaginationRoute, StyledPagLink }

@@ -7,6 +7,14 @@ const StyledImage = styled.img`
     height: 400px;
   }
 
+  &.post_small_img {
+    max-width: 100%;
+  }
+
+  &.about-us_img {    
+    max-width: 100%;
+  }
+
   &.avatar {
     border-radius: 50%;
     height: 135px;

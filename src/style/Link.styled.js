@@ -4,13 +4,15 @@ import { NavLink } from 'react-router-dom'
 const StyledLink = styled(NavLink)`
     color: #444;
     text-decoration: none;
+    margin-bottom: 50px;
 
     &:hover {
-      color: red;
+      color: #60a3bc;
     }
 
     &.${props => props.activeClassName} {
-      border: 1px solid red;
+      color: #60a3bc;
+      font-weight: bold;
     }
 `
 
