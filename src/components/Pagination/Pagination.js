@@ -1,3 +1,4 @@
+/* eslint-disable space-infix-ops */
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
@@ -8,7 +9,7 @@ const Pagination = props => {
 
   return (
     <Switch>
-      <Route path={`${path}/:page` & {}}>
+      <Route path={`${path}/:page`}>
         <PaginationRoute
           path={path}
           limit={limit}
